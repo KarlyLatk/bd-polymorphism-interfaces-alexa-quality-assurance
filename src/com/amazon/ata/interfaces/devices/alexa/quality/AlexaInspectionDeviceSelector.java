@@ -1,5 +1,6 @@
 package com.amazon.ata.interfaces.devices.alexa.quality;
 
+import com.amazon.ata.interfaces.increment.Incrementable;
 import com.amazon.ata.interfaces.increment.SequentialIncrementer;
 
 /**
@@ -8,17 +9,18 @@ import com.amazon.ata.interfaces.increment.SequentialIncrementer;
  */
 public class AlexaInspectionDeviceSelector {
 
-    private final SequentialIncrementer incrementer;
+    private final Incrementable incrementer;
 
     /**
      * Instantiates a new Alexa inspection device selector with the given incrementer.
      *
      * @param incrementer the incrementer
      */
-    public AlexaInspectionDeviceSelector(SequentialIncrementer incrementer) {
+    public AlexaInspectionDeviceSelector(Incrementable incrementer) {
         this.incrementer = incrementer;
     }
 
+    // List<Order> orders = new ArrayList<>();
     /**
      * This method returns the position of the device to be selected for quality checks. The position is
      * based on its location on the conveyor belt. For a batch of devices the first element on the belt is 1.
